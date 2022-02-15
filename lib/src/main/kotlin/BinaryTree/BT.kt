@@ -31,13 +31,13 @@ data class Node(
  * Function that generates a binary tree for testing :)
  * @param level the level of the tree
  */
-fun generateTree(level: Int): Node? {
+fun GenerateTree(level: Int): Node? {
     if (level == 0) {
         return null
     } else {
         var node: Node = Node("${Random.nextInt(0,100)}")
-        node.yesNode = generateTree(level - 1)
-        node.noNode = generateTree(level - 1)
+        node.yesNode = GenerateTree(level - 1)
+        node.noNode = GenerateTree(level - 1)
         return node
     }
 }
