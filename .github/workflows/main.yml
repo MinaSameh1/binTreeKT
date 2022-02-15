@@ -24,14 +24,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
+      # Format
       - name: Format
         run: ./gradlew ktlintFormat
-        
+      # Lint
       - name: Run ktLint
         run: ./gradlew ktlintCheck
-
-        
+      # Test
       - name: gradle Test
         run: ./gradlew test 
+      # Publish
+      - name: Publish package
+        uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
+        with:
+          arguments: publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
