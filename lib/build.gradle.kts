@@ -30,9 +30,27 @@ plugins {
     // KDoc
     id("org.jetbrains.dokka") version "1.6.10"
     // Release to github
-    id("net.researchgate.release") version "2.8.1"
+    id("maven-publish")
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://github.com/MinaSameh1/binTreeKT")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
 }
 
 repositories {
