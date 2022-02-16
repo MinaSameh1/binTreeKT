@@ -7,7 +7,7 @@
  * User Manual available at https://docs.gradle.org/7.3.3/userguide/building_java_projects.html
  */
 
-version = "0.1.0"
+version = "0.1.1"
 
 tasks.jar {
     manifest {
