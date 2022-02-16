@@ -31,13 +31,15 @@ jobs:
       - name: Run ktLint
         run: ./gradlew ktlintCheck
       # Test
-      - name: gradle Test
+      - name: Test
         run: ./gradlew test 
+      # Build
+      - name: Build
+        run: ./gradlew build
       # Publish
-      - name: Publish package
-        uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
-        with:
-          arguments: publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and publish JAR # Used to execute gradle commands
+        run: gradle \
+          -Pgpr.key=${{ secrets.GITHUB_TOKEN }} \
+          -Pgpr.user=$GITHUB_ACTOR \
+          publish
           
