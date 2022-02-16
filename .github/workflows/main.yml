@@ -24,6 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      # Installs Java
+      - uses: actions/setup-java@v1
+        with: # Pass parameters to action
+          java-version: '11.0.4'
+          java-package: jdk
+          architecture: x64
       # Format
       - name: Format
         run: ./gradlew ktlintFormat
