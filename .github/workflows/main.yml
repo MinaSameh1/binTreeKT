@@ -45,7 +45,7 @@ jobs:
         run: gradle build
       # Publish
       - name: publish JAR # Used to execute gradle commands
-        run: gradle \
+        run: gradlev --info \
           -Pgpr.key=${{ secrets.GITHUB_TOKEN }} \
           -Pgpr.user=$GITHUB_ACTOR \
           publish
