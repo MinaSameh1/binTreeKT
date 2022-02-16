@@ -49,4 +49,5 @@ jobs:
           -Pgpr.key=${{ secrets.GITHUB_TOKEN }} \
           -Pgpr.user=$GITHUB_ACTOR \
           publish
-          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
