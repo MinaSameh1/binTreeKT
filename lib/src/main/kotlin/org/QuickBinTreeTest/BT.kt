@@ -1,4 +1,4 @@
-package QuickBinTreeTest
+package org.QuickBinTreeTest
 
 import kotlin.random.Random
 
