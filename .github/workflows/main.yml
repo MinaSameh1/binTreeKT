@@ -26,23 +26,23 @@ jobs:
       - uses: actions/checkout@v2
       
       # Installs Java
-      - uses: actions/setup-java@v1
+      - uses: actions/setup-java@v2.5.0
         with: # Pass parameters to action
           java-version: '11.0.4'
           java-package: jdk
           architecture: x64
       # Format
       - name: Format
-        run: ./gradlew ktlintFormat
+        run: gradle ktlintFormat
       # Lint
       - name: Run ktLint
-        run: ./gradlew ktlintCheck
+        run: gradle ktlintCheck
       # Test
       - name: Test
-        run: ./gradlew test 
+        run: gradle test 
       # Build
       - name: Build
-        run: ./gradlew build
+        run: gradle build
       # Publish
       - name: publish JAR # Used to execute gradle commands
         run: gradle \
