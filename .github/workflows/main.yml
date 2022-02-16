@@ -33,20 +33,18 @@ jobs:
           architecture: x64
       # Format
       - name: Format
-        run: gradle ktlintFormat
+        run: ./gradlew ktlintFormat
       # Lint
       - name: Run ktLint
-        run: gradle ktlintCheck
+        run: ./gradlew ktlintCheck
       # Test
       - name: Test
-        run: gradle test 
+        run: ./gradlew test 
       # Build
       - name: Build
-        run: gradle build
+        run: ./gradlew build
       # Publish
       - name: publish JAR # Used to execute gradle commands
-        run: gradle \
-          -Pgpr.user=$GITHUB_ACTOR \
-          publish
+        run: ./gradlew publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
