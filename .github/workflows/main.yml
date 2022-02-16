@@ -28,7 +28,7 @@ jobs:
       # Installs Java
       - uses: actions/setup-java@v2.5.0
         with: # Pass parameters to action
-          java-version: '11.0.4'
+          java-version: '11'
           distribution: temurin
           architecture: x64
       # Format
