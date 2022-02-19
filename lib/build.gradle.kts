@@ -7,7 +7,8 @@
  * User Manual available at https://docs.gradle.org/7.3.3/userguide/building_java_projects.html
  */
 
-version = "0.1.3"
+group = "org.example"
+version = "0.1.4"
 
 tasks.jar {
     manifest {
@@ -47,7 +48,7 @@ publishing {
         }
     }
     publications {
-        register<MavenPublication>("gpr") {
+        register<MavenPublication>("BinTree") {
             from(components["java"])
         }
     }
