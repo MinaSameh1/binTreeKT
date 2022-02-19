@@ -7,7 +7,7 @@
  * User Manual available at https://docs.gradle.org/7.3.3/userguide/building_java_projects.html
  */
 
-group = "org.example"
+group = "binTreeTest"
 version = "0.1.4"
 
 tasks.jar {
