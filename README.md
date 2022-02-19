@@ -42,6 +42,7 @@ dependencies {
 }
 ```
 
+*Small Note: I know the key is supposed to be safe to share However I don't feel comfortable leaving a key out in the open even if its just read:packages permssions, and since this is a small Project just to test something out I won't put out a key, I left this info however to help others if they want to release their own package.*
 
 ## Refrences
 
