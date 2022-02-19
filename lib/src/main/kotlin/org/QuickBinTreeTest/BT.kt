@@ -42,10 +42,6 @@ fun GenerateTree(level: Int): Node? {
     }
 }
 
-// Returns hello world
-fun helloWorld(): String {
-    return "Hello World!"
-}
 /*
  * Function that prints the binary tree :)
  * @param node the node that will be printed
